@@ -7,40 +7,52 @@
 <style>
 body{
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 800px;
+  max-width: 950px;
   margin: 40px auto;
-  line-height:1.6;
+  line-height: 1.6;
+  color: black;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
 }
 
 nav{
-  margin-bottom:30px;
+  margin-left: auto;
 }
 
 nav a{
-  margin-right:20px;
-  text-decoration:none;
-  font-weight:bold;
-  color:black;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 nav a:hover{
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
-/* 새로 추가 */
+.page-title{
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.2;
+}
 
 .university{
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .semester{
-  margin-left:25px;
-  font-size:0.9em;
-  color:#333;
+  margin-left: 25px;
+  font-size: 0.9em;
+  color: #333;
 }
 
 .course-list{
-  margin-left:25px;
+  margin-left: 25px;
 }
 </style>
 
@@ -50,11 +62,15 @@ nav a:hover{
 
 <h1>Teaching</h1>
 
-<nav>
-<a href="index.html">About</a>
-<a href="research.html">Research</a>
-<a href="teaching.html">Teaching</a>
-</nav>
+<header>
+  <div class="page-title">Teaching</div>
+
+  <nav>
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="teaching.html">Teaching</a>
+  </nav>
+</header>
 
 
 <h3 class="university">Chonnam National University</h3>
