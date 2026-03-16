@@ -16,4 +16,4 @@ logic, and category theory.
 
 ## Contact
 
-Email: your-email@example.com
+Email: goldmaker@jnu.ac.kr
