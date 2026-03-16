@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Jinyeong Gim
+permalink: /Jinyeong Gim/
 ---
 
 Jinyeong Gim is an Assistant Professor, Department of Philosophy
