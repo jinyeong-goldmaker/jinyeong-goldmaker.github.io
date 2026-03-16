@@ -7,32 +7,60 @@
 <style>
 body{
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 800px;
+  max-width: 950px;
   margin: 40px auto;
-  line-height:1.6;
+  line-height: 1.6;
 }
 
 nav{
-  margin-bottom:30px;
+  margin-bottom: 30px;
 }
 
 nav a{
-  margin-right:20px;
-  text-decoration:none;
-  font-weight:bold;
-  color:black;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 nav a:hover{
-  text-decoration:underline;
+  text-decoration: underline;
+}
+
+.top-section{
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-image{
+  width: 220px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.profile-text{
+  flex: 1;
+}
+
+.profile-text h1{
+  margin-top: 0;
+}
+
+.contact-links a{
+  color: black;
+  text-decoration: none;
+}
+
+.contact-links a:hover{
+  text-decoration: underline;
 }
 </style>
 
 </head>
 
 <body>
-
-<h1>Jinyeong Gim</h1>
 
 <nav>
 <a href="index.html">About</a>
@@ -41,26 +69,38 @@ nav a:hover{
 <a href="cv.html">CV</a>
 </nav>
 
+<div class="top-section">
+  <img src="profie.jpg" alt="Jinyeong Gim" class="profile-image">
+
+  <div class="profile-text">
+    <h1>Jinyeong Gim</h1>
+
+    <p>
+      Assistant Professor of Philosophy<br>
+      Chonnam National University
+    </p>
+
+    <p class="contact-links">
+      <a href="https://philos.jnu.ac.kr/philos/13077/subview.do?enc=Zm5jdDF8QEB8JTJGcHJvZiUyRnBoaWxvcyUyRjMxOCUyRjI4MTIlMkZ2aWV3LmRvJTNG" target="_blank">Department of Philosophy, Chonnam National University</a><br>
+      <a href="mailto:goldmaker@jnu.ac.kr">your-goldmaker@jnu.ac.kr</a><br>
+      <a href="https://github.com/jinyeong-goldmaker" target="_blank">GitHub</a>
+    </p>
+  </div>
+</div>
+
 <h2>About</h2>
 
 <p>
-Assistant Professor, Department of Philosophy<br>
-Chonnam National University
-</p>
-
-<p>
-Research interests: My research focuses on historical and philosophical issues that arise in different areas of biological and cognitive sciences. <br>
-- First, my works concentrate on the concepts of mechanism, explanation, and models, which have been central to the New Mechanism. <br>
-- Second, I am also interested in issues that arise in artificial intelligence, neuroscience, and cognitive science by investigating a variety of philosophical concepts: computation, learning, moral judgment, consciousness, evolution, etc..<br> 
+Research interests: My research focuses on historical and philosophical issues that arise in different areas of biological and cognitive sciences.
+- First, my works concentrate on the concepts of mechanism, explanation, and models, which have been central to the New Mechanism.
+- Second, I am also interested in issues that arise in artificial intelligence, neuroscience, and cognitive science by investigating a variety of philosophical concepts: computation, learning, moral judgment, consciousness, evolution, etc..
 - Third, in order to analyze those concepts within both scientific fields, I use a mathematical framework from the structural point of view with category theory.
-
 </p>
 
 <h2>Contact</h2>
 
 <p>
-Email: goldmaker@jnu.ac.kr<br>
-GitHub: https://github.com/jinyeong-goldmaker
+For academic inquiries, please contact me by email.
 </p>
 
 </body>
