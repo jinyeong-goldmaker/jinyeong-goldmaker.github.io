@@ -7,7 +7,7 @@ function validate(i,rows,asts,premises,engine){
   if(r.rule==='Premise')return premises.some(p=>E(p,cur))?[true,'전제와 일치합니다.']:[false,'주어진 전제와 일치하지 않습니다.'];
   if(r.rule==='AS')return r.refs.length===0?[true,'보조증명의 가정입니다.']:[false,'AS는 참조 행을 사용하지 않습니다.'];
   const closedRange=g=>PE.findClosed(engine,g.start,g.end);
-  const rangeReady=(g,label)=>{const s=closedRange(g);if(!s)return[null,`${label}의 범위 ${g.start}-${g.end}는 /로 닫힌 보조증명이어야 합니다.`];if(!PE.samePath(s.parentPath,r.scope))return[null,`${label}는 현재 행과 같은 바깥 범위에서 닫힌 보조증명을 참조해야 합니다.`];return[s,null]};
+  const rangeReady=(g,label)=>{if(g.start<1||g.end<g.start||g.end>=r.n)return[null,`${label}의 범위는 현재 행보다 앞선 보조증명이어야 합니다.`];const s=closedRange(g);if(!s)return[null,`${label}의 범위 ${g.start}-${g.end}는 /로 닫힌 보조증명이어야 합니다.`];if(!PE.samePath(s.parentPath,r.scope))return[null,`${label}는 현재 행과 같은 바깥 범위에서 닫힌 보조증명을 참조해야 합니다.`];return[s,null]};
   if(r.rule==='→I'||r.rule==='¬I'){
     if(ranges.length!==1||r.refs.length!==1)return[false,`${r.rule}는 닫힌 보조증명 범위 하나(예: 2-4)를 참조합니다.`];
     const g=ranges[0],[s,err]=rangeReady(g,r.rule);if(err)return[false,err];
@@ -18,7 +18,8 @@ function validate(i,rows,asts,premises,engine){
   }
   if(r.rule==='∨E'){
     if(lineRefs.length!==1||ranges.length!==2||r.refs.length!==3)return[false,'∨E는 선언문 한 행과 닫힌 보조증명 두 범위를 참조합니다. 예: 1,2-3,4-5'];
-    const d=prior(lineRefs[0]);if(!d||d.k!=='or')return[false,'∨E의 첫 참조는 A ∨ B 형태의 선언문이어야 합니다.'];
+    const dn=lineRefs[0];if(dn<1||dn>=r.n||!PE.accessible(rows[dn-1],r))return[false,'∨E의 선언문 참조 행은 현재 위치에서 사용할 수 있어야 합니다.'];
+    const d=prior(dn);if(!d||d.k!=='or')return[false,'∨E의 첫 참조는 A ∨ B 형태의 선언문이어야 합니다.'];
     const [g1,g2]=ranges,[s1,e1]=rangeReady(g1,'∨E'),[s2,e2]=rangeReady(g2,'∨E');if(e1)return[false,e1];if(e2)return[false,e2];
     const a1=rows[g1.start-1],a2=rows[g2.start-1],z1=asts[g1.end-1],z2=asts[g2.end-1];
     if(a1?.rule!=='AS'||a2?.rule!=='AS')return[false,'∨E의 두 보조증명은 각각 AS 행에서 시작해야 합니다.'];
