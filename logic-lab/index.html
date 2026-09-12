@@ -1,18 +1,71 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CNU Phil+Sci+Math+Logic Lab | 기호논리학 증명연습</title>
-<link rel="stylesheet" href="style.css?v=0.4">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>기호논리학 실습도구</title>
+<meta name="description" content="문장논리·술어논리 실습 도구 모음 — 진리표, 적형식·주연결사 확인, 자연연역 증명기, 진리나무.">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header><div><h1>CNU Phil+Sci+Math+Logic Lab</h1><p>전남대학교 철학과 수리논리 및 과학철학 연구실</p></div><span>기호논리학 증명연습</span></header>
-<main>
-<section class="card"><div class="section-head"><div><h2>자연연역 증명기</h2><p>전제와 결론을 설정한 뒤 자연연역 증명을 구성하고 검증합니다.</p></div></div></section>
-<section class="card"><h2>문제 설정</h2><div class="grid"><div><label>전제 <small>한 줄에 하나</small></label><textarea id="premises">P → Q
-P</textarea></div><div><label>결론</label><input id="conclusion" value="Q"><div class="symbols"><button>¬</button><button>∧</button><button>∨</button><button>→</button><button>↔</button><button>⊥</button></div></div></div><button id="load" class="primary">문제 불러오기</button><div id="problem" class="problem"></div></section>
-<section class="card"><div class="section-head"><div><h2>증명</h2><p>각 행에 문장, 참조 행 또는 보조증명 범위, 추론 규칙을 입력하세요.</p></div></div><div class="symbols"><button>¬</button><button>∧</button><button>∨</button><button>→</button><button>↔</button><button>⊥</button></div><div class="tablewrap"><table><thead><tr><th>행</th><th>문장</th><th>참조</th><th>규칙</th><th>검증</th></tr></thead><tbody id="proof"></tbody></table></div><div class="actions"><button id="add">+ 행 추가</button><button id="remove">− 마지막 행</button><button id="check" class="primary">전체 검증</button></div><div id="summary" class="summary">증명을 입력한 뒤 전체 검증을 누르세요.</div></section>
-<section class="card guide"><h2>현재 지원 규칙</h2><p><b>Premise, AS, R, ∧I, ∧E, ∨I, ∨E, →E, →I, ⊥I, ⊥E, ¬I, ↔I, ↔E</b></p><p>보조증명은 <b>AS</b>로 시작하고, 마지막 문장 끝에 <b>/</b>를 붙여 닫습니다. 예: <b>Q /</b>. 닫힌 범위는 <b>2-4</b>처럼 참조합니다.</p><p>예: →I와 ¬I는 닫힌 범위 하나를, ∨E와 ↔I는 닫힌 범위 두 개를 사용합니다.</p><p>기호: ¬ ∧ ∨ → ↔ ⊥ · 별칭: ~, !, &, ^, |, -&gt;, =&gt;, &lt;-&gt;</p><p><b>~</b>를 입력하면 자동으로 <b>¬</b>로 바뀝니다. 증명 영역의 기호 버튼은 마지막으로 선택한 문장 입력칸에 삽입됩니다.</p><p class="muted">/는 문장 자체의 일부가 아니라 보조증명 종료 표시입니다. 따라서 파싱할 때는 자동으로 제거됩니다.</p></section>
-</main><footer>CNU Phil+Sci+Math+Logic Lab · Department of Philosophy, Chonnam National University</footer>
-<script src="js/parser.js?v=0.4"></script><script src="js/proof-engine.js?v=0.4"></script><script src="js/rules.js?v=0.4"></script><script src="js/app.js?v=0.4"></script>
-</body></html>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">기호논리학 실습도구</a>
+    <nav>
+      <a href="index.html" class="active">홈</a>
+      <a href="truth-table.html">진리표</a>
+      <a href="wff-checker.html">적형식·주연결사</a>
+      <a href="natural-deduction.html">자연연역 증명기</a>
+      <a href="truth-tree.html">진리나무</a>
+      <a href="exercises.html">연습문제</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h1>기호논리학 실습도구</h1>
+  <p class="lead">
+    문장논리(propositional logic)와 술어논리(predicate logic)를 함께 연습할 수 있는 무료 웹 도구입니다.
+    <a href="https://sites.google.com/view/school-of-logic/" target="_blank" rel="noopener">논리학당</a>의 진리표·적형식 확인 도구와
+    <a href="https://zolaist.org/logic/" target="_blank" rel="noopener">기호논리학 실습실</a>의 자연연역 증명 검증기에서 영감을 받아,
+    두 도구의 장점을 한 곳에 모으고 진리나무(semantic tableau) 검사를 더했습니다.
+  </p>
+
+  <div class="tool-grid">
+    <a class="tool-card card" href="truth-table.html">
+      <h3>진리표 생성기</h3>
+      <p>문장논리 문장을 입력하면 진리표를 자동으로 만들고, 항진·모순·우연 여부를 판정합니다. 여러 전제와 결론을 넣어 논증의 타당성도 검사할 수 있습니다.</p>
+    </a>
+    <a class="tool-card card" href="wff-checker.html">
+      <h3>적형식·주연결사 확인</h3>
+      <p>입력한 문장이 올바른 적형식(WFF)인지 검사하고, 주연결사가 무엇인지 알려줍니다. 문장논리와 술어논리 모두 지원합니다.</p>
+    </a>
+    <a class="tool-card card" href="natural-deduction.html">
+      <h3>자연연역 증명기</h3>
+      <p>전제와 결론을 입력한 뒤, 한 줄씩 규칙을 적용해 증명을 작성하면 각 줄이 올바른지 즉시 검증해 줍니다. 가정을 이용한 하위증명(→I, ¬I, ∨E, ∃E 등)도 지원합니다.</p>
+    </a>
+    <a class="tool-card card" href="truth-tree.html">
+      <h3>진리나무 (semantic tableau)</h3>
+      <p>전제와 결론(또는 문장 하나)을 넣으면 진리나무를 자동으로 전개해 타당성/충족가능성을 판정하고, 무효인 경우 반례(모형)를 보여줍니다.</p>
+    </a>
+  </div>
+
+  <h2>사용 팁</h2>
+  <p>
+    기호는 화면의 기호 버튼을 눌러 입력하거나, 키보드로 직접 입력할 수 있습니다. 예를 들어
+    <code>~</code>, <code>!</code> → ¬ &nbsp;|&nbsp; <code>&amp;</code>, <code>^</code> → ∧ &nbsp;|&nbsp;
+    <code>|</code> → ∨ &nbsp;|&nbsp; <code>-&gt;</code> → → &nbsp;|&nbsp; <code>&lt;-&gt;</code> → ↔ &nbsp;|&nbsp;
+    <code>forall x</code>, <code>(x)</code> → ∀x &nbsp;|&nbsp; <code>exists x</code>, <code>(?x)</code> → ∃x 로 자동 변환됩니다.
+    (술어논리 항 문자 <code>v</code>와의 충돌을 피하기 위해 <code>v</code>는 ∨로 자동 변환되지 않습니다 — <code>|</code>나 ∨ 기호를 사용하세요.)
+  </p>
+  <p class="help-text">
+    술어논리에서 소문자는 모두 항(term)입니다. 특정 문자가 변항인지 상항인지는 별도로 구분하지 않고,
+    양화사에 의해 묶여 있으면 그 범위 안에서는 변항으로, 묶여 있지 않으면 상항(고정된 이름)으로 취급합니다.
+  </p>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>이 도구는 학습·연습 목적의 오픈소스 프로젝트입니다. 버그 제보나 개선 제안은 GitHub 저장소의 이슈로 남겨주세요.</p>
+  </div>
+</footer>
+</body>
+</html>
