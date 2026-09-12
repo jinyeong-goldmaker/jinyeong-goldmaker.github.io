@@ -1,0 +1,12 @@
+{
+  "name": "symbolic-logic-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "문장논리·술어논리 실습 도구 모음 (진리표, 적형식·주연결사 확인, 자연연역 증명기, 진리나무) — 의존성 없는 정적 웹사이트",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/test-parser.mjs && node tests/test-truthtable.mjs && node tests/test-tree.mjs && node tests/test-nd.mjs",
+    "start": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}
