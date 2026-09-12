@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Natural Deduction Prover · CNU Logic Lab</title>
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/bilingual.css">
+</head>
+<body>
+<header class="site-header"><div class="container"><a class="brand" href="index.html">CNU Logic Lab</a><nav>
+<a href="truth-table.html">Truth Tables</a><a href="wff-checker.html">WFF · Main Connective</a><a href="natural-deduction.html" class="active">Natural Deduction</a><a href="truth-tree.html">Semantic Tableau</a><a href="exercises.html">Exercises</a>
+<span class="language-switch"><a href="../natural-deduction.html">한국어</a><span class="sep">|</span><a class="active" href="natural-deduction.html">English</a></span>
+</nav></div></header>
+<main class="container">
+<h1>Natural Deduction Prover</h1><p class="lead">Enter premises and a conclusion, then construct a proof line by line by selecting rules and cited lines. Fitch-style subproofs may be nested.</p>
+<div class="mode-toggle" id="mode-toggle"><button data-mode="prop" type="button">Propositional Logic</button><button data-mode="pred" type="button">Predicate Logic</button></div>
+<div class="card"><h2 style="margin-top:0">Premises &amp; Conclusion</h2><div id="premise-list"></div><button class="btn secondary small" id="add-premise" type="button">+ Add premise</button><div style="margin-top:0.8rem"><label class="field-label">Conclusion (target)</label><input type="text" id="conclusion-input" placeholder="e.g. ¬A"></div></div>
+<div class="card"><h2 style="margin-top:0">Proof</h2><div id="proof-root"></div><div style="margin-top:0.6rem"><button class="btn secondary small" id="add-line-root" type="button">+ Add line</button><button class="btn secondary small" id="add-subproof-root" type="button">+ Add subproof (assumption)</button></div><div style="margin-top:1rem"><button class="btn" id="verify" type="button">Verify proof</button></div><div class="msg" id="msg" style="display:none"></div></div>
+<div class="card"><h3 style="margin-top:0">Rules and citation format</h3><p class="help-text">Separate line numbers with commas (e.g. <code>1,2</code>). Cite a whole subproof as <code>start-end</code> (e.g. <code>2-4</code>).</p><div id="rule-help"></div></div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>Prof. Jinyeong Gim, Phil+Sci+Math+Logic Lab, Department of Philosophy, Chonnam National University</p><p class="footer-home">&larr; <a href="index.html">Home</a></p></div></div></footer>
+<script>if(!new URLSearchParams(location.search).has('mode')){const u=new URL(location.href);u.searchParams.set('mode','prop');history.replaceState(null,'',u);}</script>
+<script type="module" src="../js/pages/natural-deduction.js"></script><script src="../js/lang-en.js"></script>
+</body></html>
