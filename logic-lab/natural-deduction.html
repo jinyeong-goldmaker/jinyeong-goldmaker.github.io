@@ -5,63 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>자연연역 증명기 · 전남대학교 논리학 실습도구</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bilingual.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
-    <nav>
-      <a href="index.html">홈</a>
-      <a href="truth-table.html">진리표</a>
-      <a href="wff-checker.html">적형식·주연결사</a>
-      <a href="natural-deduction.html" class="active">자연연역 증명기</a>
-      <a href="truth-tree.html">진리나무</a>
-      <a href="exercises.html">연습문제</a>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="container">
+<a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
+<nav>
+<a href="truth-table.html">진리표</a>
+<a href="wff-checker.html">적형식 · 주연결사 확인</a>
+<a href="natural-deduction.html" class="active">자연연역 증명기</a>
+<a href="truth-tree.html">진리나무</a>
+<a href="exercises.html">연습문제</a>
+<span class="language-switch"><a class="active" href="natural-deduction.html">한국어</a><span class="sep">|</span><a href="en/natural-deduction.html">English</a></span>
+</nav></div></header>
 <main class="container">
-  <h1>자연연역 증명기</h1>
-  <p class="lead">전제와 결론을 입력한 뒤, 줄마다 규칙과 인용할 줄 번호를 지정해 증명을 작성하세요. 하위증명(가정) 안에는 또 다른 하위증명을 중첩할 수 있습니다.</p>
-
-  <div class="mode-toggle" id="mode-toggle">
-    <button data-mode="prop" type="button">문장논리</button>
-    <button data-mode="pred" type="button">술어논리</button>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-top:0">전제 &amp; 결론</h2>
-    <div id="premise-list"></div>
-    <button class="btn secondary small" id="add-premise" type="button">+ 전제 추가</button>
-    <div style="margin-top:0.8rem">
-      <label class="field-label">결론 (목표)</label>
-      <input type="text" id="conclusion-input" placeholder="예: ¬A">
-    </div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-top:0">증명</h2>
-    <div id="proof-root"></div>
-    <div style="margin-top:0.6rem">
-      <button class="btn secondary small" id="add-line-root" type="button">+ 줄 추가</button>
-      <button class="btn secondary small" id="add-subproof-root" type="button">+ 하위증명(가정) 추가</button>
-    </div>
-    <div style="margin-top:1rem">
-      <button class="btn" id="verify" type="button">증명 검증하기</button>
-    </div>
-    <div class="msg" id="msg" style="display:none"></div>
-  </div>
-
-  <div class="card">
-    <h3 style="margin-top:0">규칙 목록 (인용 표기법)</h3>
-    <p class="help-text">
-      줄 번호는 쉼표로 구분해서 적습니다 (예: <code>1,2</code>). 하위증명 전체를 인용할 때는
-      <code>시작줄-끝줄</code> 형태로 적습니다 (예: <code>2-4</code>).
-    </p>
-    <div id="rule-help"></div>
-  </div>
+<h1>자연연역 증명기</h1>
+<p class="lead">전제와 결론을 입력한 뒤, 줄마다 규칙과 인용할 줄 번호를 지정해 증명을 작성하세요. 하위증명(가정) 안에는 또 다른 하위증명을 중첩할 수 있습니다.</p>
+<div class="mode-toggle" id="mode-toggle"><button data-mode="prop" type="button">문장논리</button><button data-mode="pred" type="button">술어논리</button></div>
+<div class="card"><h2 style="margin-top:0">전제 &amp; 결론</h2><div id="premise-list"></div><button class="btn secondary small" id="add-premise" type="button">+ 전제 추가</button><div style="margin-top:0.8rem"><label class="field-label">결론 (목표)</label><input type="text" id="conclusion-input" placeholder="예: ¬A"></div></div>
+<div class="card"><h2 style="margin-top:0">증명</h2><div id="proof-root"></div><div style="margin-top:0.6rem"><button class="btn secondary small" id="add-line-root" type="button">+ 줄 추가</button><button class="btn secondary small" id="add-subproof-root" type="button">+ 하위증명(가정) 추가</button></div><div style="margin-top:1rem"><button class="btn" id="verify" type="button">증명 검증하기</button></div><div class="msg" id="msg" style="display:none"></div></div>
+<div class="card"><h3 style="margin-top:0">규칙 목록 (인용 표기법)</h3><p class="help-text">줄 번호는 쉼표로 구분해서 적습니다 (예: <code>1,2</code>). 하위증명 전체를 인용할 때는 <code>시작줄-끝줄</code> 형태로 적습니다 (예: <code>2-4</code>).</p><div id="rule-help"></div></div>
 </main>
-<footer class="site-footer"><div class="container"><p>&larr; <a href="index.html">홈으로</a></p></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>전남대학교 인문대학 철학과 Phil+Sci+Math+Logic 김진영 교수 Lab (goldmaker@jnu.ac.kr)</p><p class="footer-home">&larr; <a href="index.html">홈으로</a></p></div></div></footer>
 <script type="module" src="js/pages/natural-deduction.js"></script>
 </body>
 </html>
