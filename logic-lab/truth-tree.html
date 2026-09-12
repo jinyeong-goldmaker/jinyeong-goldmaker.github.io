@@ -25,7 +25,7 @@
 <div class="mode-toggle" id="mode-toggle"><button data-mode="prop" type="button">문장논리</button><button data-mode="pred" type="button">술어논리</button></div>
 <div class="card"><h2 style="margin-top:0">전제 → 결론 (타당성 검사)</h2><div id="premise-list"></div><button class="btn secondary small" id="add-premise">+ 전제 추가</button><div style="margin-top:0.8rem"><label class="field-label">결론</label><input type="text" id="conclusion-input" placeholder="예: ∃xGx"></div><div class="symbol-palette" id="palette"></div><div style="margin-top:0.6rem"><button class="btn" id="run-validity">진리나무로 타당성 검사</button><button class="btn secondary" id="run-sat">(전제만) 충족가능성 검사</button></div><div class="msg" id="msg" style="display:none"></div><div id="model-wrap"></div><h3>나무 구조</h3><div id="tree-wrap" style="overflow-x:auto"></div></div>
 </main>
-<footer class="site-footer"><div class="container"><div class="footer-row"><p>전남대학교 인문대학 철학과 김진영 교수 Phil+Sci+Math+Logic Lab (goldmaker@jnu.ac.kr)</p><p class="footer-home">&larr; <a href="index.html">홈으로</a></p></div></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>전남대학교 인문대학 철학과 <a href="https://jinyeong-goldmaker.github.io/">김진영 교수</a> Phil+Sci+Math+Logic Lab (goldmaker@jnu.ac.kr)</p><p class="footer-home">&larr; <a href="index.html">홈으로</a></p></div></div></footer>
 <script>if(!new URLSearchParams(location.search).has('mode')){const u=new URL(location.href);u.searchParams.set('mode','prop');history.replaceState(null,'',u);}</script>
 <script type="module" src="js/pages/truth-tree.js"></script>
 </body>
