@@ -131,7 +131,7 @@ document.getElementById('run-sat').addEventListener('click', () => {
   renderTree(tree);
 });
 
-// Prefill is from URL query (used by the exercises page):
+// Prefill from URL query (used by the exercises page):
 //   ?mode=prop|pred&premises=P1|P2&conclusion=C  (conclusion omitted -> satisfiability check)
 (() => {
   const qp = new URLSearchParams(location.search);
