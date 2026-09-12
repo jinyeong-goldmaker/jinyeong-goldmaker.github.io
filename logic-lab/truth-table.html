@@ -5,53 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>진리표 생성기 · 전남대학교 논리학 실습도구</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bilingual.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
-    <nav>
-      <a href="index.html">홈</a>
-      <a href="truth-table.html" class="active">진리표</a>
-      <a href="wff-checker.html">적형식·주연결사</a>
-      <a href="natural-deduction.html">자연연역 증명기</a>
-      <a href="truth-tree.html">진리나무</a>
-      <a href="exercises.html">연습문제</a>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="container">
+<a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
+<nav>
+<a href="truth-table.html" class="active">진리표</a>
+<a href="wff-checker.html">적형식 · 주연결사 확인</a>
+<a href="natural-deduction.html">자연연역 증명기</a>
+<a href="truth-tree.html">진리나무</a>
+<a href="exercises.html">연습문제</a>
+<span class="language-switch"><a class="active" href="truth-table.html">한국어</a><span class="sep">|</span><a href="en/truth-table.html">English</a></span>
+</nav></div></header>
 <main class="container">
-  <h1>진리표 생성기</h1>
-  <p class="lead">문장논리 문장의 진리표를 만들고, 항진·모순·우연 여부를 판정합니다. (진리표는 문장논리에서만 사용할 수 있습니다.)</p>
-
-  <div class="card">
-    <h2 style="margin-top:0">1. 문장 하나 분석하기</h2>
-    <label class="field-label">문장을 입력하세요</label>
-    <input type="text" id="single-input" placeholder="예: (A∧B)→¬C">
-    <div class="symbol-palette" id="single-palette"></div>
-    <button class="btn" id="single-run">진리표 생성</button>
-    <div class="msg" id="single-msg" style="display:none"></div>
-    <div id="single-table-wrap"></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-top:0">2. 논증 타당성 검사</h2>
-    <p class="help-text">전제를 원하는 만큼 추가하고 결론을 입력하면, 모든 전제가 참이면서 결론이 거짓인 행(반례)이 있는지 찾아 타당성을 판정합니다.</p>
-    <div id="premise-list"></div>
-    <button class="btn secondary small" id="add-premise">+ 전제 추가</button>
-    <div style="margin-top:0.8rem">
-      <label class="field-label">결론</label>
-      <input type="text" id="conclusion-input" placeholder="예: B∨C">
-    </div>
-    <div class="symbol-palette" id="arg-palette"></div>
-    <div style="margin-top:0.6rem">
-      <button class="btn" id="arg-run">타당성 검사</button>
-    </div>
-    <div class="msg" id="arg-msg" style="display:none"></div>
-    <div id="arg-table-wrap"></div>
-  </div>
+<h1>진리표 생성기</h1>
+<p class="lead">문장논리 문장의 진리표를 만들고, 항진·모순·우연 여부를 판정합니다. (진리표는 문장논리에서만 사용할 수 있습니다.)</p>
+<div class="card"><h2 style="margin-top:0">1. 문장 하나 분석하기</h2><label class="field-label">문장을 입력하세요</label><input type="text" id="single-input" placeholder="예: (A∧B)→¬C"><div class="symbol-palette" id="single-palette"></div><button class="btn" id="single-run">진리표 생성</button><div class="msg" id="single-msg" style="display:none"></div><div id="single-table-wrap"></div></div>
+<div class="card"><h2 style="margin-top:0">2. 논증 타당성 검사</h2><p class="help-text">전제를 원하는 만큼 추가하고 결론을 입력하면, 모든 전제가 참이면서 결론이 거짓인 행(반례)이 있는지 찾아 타당성을 판정합니다.</p><div id="premise-list"></div><button class="btn secondary small" id="add-premise">+ 전제 추가</button><div style="margin-top:0.8rem"><label class="field-label">결론</label><input type="text" id="conclusion-input" placeholder="예: B∨C"></div><div class="symbol-palette" id="arg-palette"></div><div style="margin-top:0.6rem"><button class="btn" id="arg-run">타당성 검사</button></div><div class="msg" id="arg-msg" style="display:none"></div><div id="arg-table-wrap"></div></div>
 </main>
-<footer class="site-footer"><div class="container"><p>&larr; <a href="index.html">홈으로</a></p></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>전남대학교 인문대학 철학과 Phil+Sci+Math+Logic 김진영 교수 Lab (goldmaker@jnu.ac.kr)</p><p class="footer-home">&larr; <a href="index.html">홈으로</a></p></div></div></footer>
 <script type="module" src="js/pages/truth-table.js"></script>
 </body>
 </html>
