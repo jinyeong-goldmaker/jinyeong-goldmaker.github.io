@@ -4,46 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>전남대학교 논리학 실습도구</title>
-<meta name="description" content="전남대학교 학생들을 위한 문장논리·술어논리 실습 도구 — 진리표, 적형식·주연결사 확인, 자연연역 증명기, 진리나무.">
+<meta name="description" content="전남대학교 학생들을 위한 문장논리·술어논리 실습 도구 — 진리표, 적형식 · 주연결사 확인, 자연연역 증명기, 진리나무.">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bilingual.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
     <nav>
-      <a href="index.html" class="active">홈</a>
       <a href="truth-table.html">진리표</a>
-      <a href="wff-checker.html">적형식·주연결사</a>
+      <a href="wff-checker.html">적형식 · 주연결사 확인</a>
       <a href="natural-deduction.html">자연연역 증명기</a>
       <a href="truth-tree.html">진리나무</a>
       <a href="exercises.html">연습문제</a>
+      <span class="language-switch"><a class="active" href="index.html">한국어</a><span class="sep">|</span><a href="en/index.html">English</a></span>
     </nav>
   </div>
 </header>
 <main class="container">
   <h1>전남대학교 논리학 실습도구</h1>
-  <p class="lead">
-    전남대학교 학생들이 문장논리(propositional logic)와 술어논리(predicate logic)를 함께 연습할 수 있는 실습도구입니다.
-  </p>
+  <p class="lead">전남대학교 학생들이 문장논리(propositional logic)와 술어논리(predicate logic)를 함께 연습할 수 있는 실습도구입니다.</p>
 
   <div class="tool-grid">
-    <a class="tool-card card" href="truth-table.html">
-      <h3>진리표 생성기</h3>
-      <p>문장논리 문장을 입력하면 진리표를 자동으로 만들고, 항진·모순·우연 여부를 판정합니다. 여러 전제와 결론을 넣어 논증의 타당성도 검사할 수 있습니다.</p>
-    </a>
-    <a class="tool-card card" href="wff-checker.html">
-      <h3>적형식·주연결사 확인</h3>
-      <p>입력한 문장이 올바른 적형식(WFF)인지 검사하고, 주연결사가 무엇인지 알려줍니다. 문장논리와 술어논리 모두 지원합니다.</p>
-    </a>
-    <a class="tool-card card" href="natural-deduction.html">
-      <h3>자연연역 증명기</h3>
-      <p>전제와 결론을 입력한 뒤, 한 줄씩 규칙을 적용해 증명을 작성하면 각 줄이 올바른지 즉시 검증해 줍니다. 가정을 이용한 하위증명(→I, ¬I, ∨E, ∃E 등)도 지원합니다.</p>
-    </a>
-    <a class="tool-card card" href="truth-tree.html">
-      <h3>진리나무</h3>
-      <p>전제와 결론(또는 문장 하나)을 넣으면 진리나무(semantic tableau)를 자동으로 전개해 타당성/충족가능성을 판정하고, 무효인 경우 반례(모형)를 보여줍니다.</p>
-    </a>
+    <a class="tool-card card" href="truth-table.html"><h3>진리표 생성기</h3><p>문장논리 문장을 입력하면 진리표를 자동으로 만들고, 항진·모순·우연 여부를 판정합니다. 여러 전제와 결론을 넣어 논증의 타당성도 검사할 수 있습니다.</p></a>
+    <a class="tool-card card" href="wff-checker.html"><h3>적형식 · 주연결사 확인</h3><p>입력한 문장이 올바른 적형식(WFF)인지 검사하고, 주연결사가 무엇인지 알려줍니다. 문장논리와 술어논리 모두 지원합니다.</p></a>
+    <a class="tool-card card" href="natural-deduction.html"><h3>자연연역 증명기</h3><p>전제와 결론을 입력한 뒤, 한 줄씩 규칙을 적용해 증명을 작성하면 각 줄이 올바른지 즉시 검증해 줍니다. 가정을 이용한 하위증명(→I, ¬I, ∨E, ∃E 등)도 지원합니다.</p></a>
+    <a class="tool-card card" href="truth-tree.html"><h3>진리나무</h3><p>전제와 결론(또는 문장 하나)을 넣으면 진리나무(semantic tableau)를 자동으로 전개해 타당성/충족가능성을 판정하고, 무효인 경우 반례(모형)를 보여줍니다.</p></a>
   </div>
 
   <h2>사용 팁</h2>
@@ -56,10 +43,6 @@
     <li>술어논리에서 소문자는 모두 항(term)이며, 양화사에 의해 묶이면 해당 범위 안에서는 변항으로, 묶여 있지 않으면 상항(고정된 이름)으로 취급합니다.</li>
   </ul>
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <p>전남대학교 인문대학 철학과 Phil+Sci+Math+Logic Lab (goldmaker@jnu.ac.kr)</p>
-  </div>
-</footer>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>전남대학교 인문대학 철학과 Phil+Sci+Math+Logic 김진영 교수 Lab (goldmaker@jnu.ac.kr)</p></div></div></footer>
 </body>
 </html>
