@@ -2,7 +2,7 @@ import { tryParseFormula, formulaToString, mainConnective } from '../lib/parser.
 import { PALETTE_PROP, PALETTE_PRED } from '../lib/symbols.js';
 import { wirePalette, wireModeToggle, showMessage, el } from '../lib/ui.js';
 
-let mode = 'pred';
+let mode = 'prop';
 const input = document.getElementById('formula-input');
 const paletteEl = document.getElementById('palette');
 

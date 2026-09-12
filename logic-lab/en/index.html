@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNU Logic Lab</title>
+<meta name="description" content="CNU Logic Lab for practicing propositional and predicate logic: truth tables, WFF/main connective, natural deduction, and semantic tableaux.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/bilingual.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+<a class="brand" href="index.html">CNU Logic Lab</a>
+<nav>
+<a href="truth-table.html">Truth Tables</a>
+<a href="wff-checker.html">WFF · Main Connective</a>
+<a href="natural-deduction.html">Natural Deduction</a>
+<a href="truth-tree.html">Semantic Tableau</a>
+<a href="exercises.html">Exercises</a>
+<span class="language-switch"><a href="../index.html">한국어</a><span class="sep">|</span><a class="active" href="index.html">English</a></span>
+</nav></div></header>
+<main class="container">
+<h1>CNU Logic Lab</h1>
+<p class="lead">A practice tool for Chonnam National University students studying propositional logic and predicate logic.</p>
+<div class="tool-grid">
+<a class="tool-card card" href="truth-table.html"><h3>Truth Table Generator</h3><p>Generate truth tables for propositional formulas, classify them as tautologies, contradictions, or contingencies, and test argument validity.</p></a>
+<a class="tool-card card" href="wff-checker.html"><h3>WFF · Main Connective</h3><p>Check whether a formula is well formed and identify its main connective. Both propositional and predicate logic are supported.</p></a>
+<a class="tool-card card" href="natural-deduction.html"><h3>Natural Deduction Prover</h3><p>Construct a proof line by line and verify each rule application, including Fitch-style subproofs.</p></a>
+<a class="tool-card card" href="truth-tree.html"><h3>Semantic Tableau</h3><p>Expand a semantic tableau automatically to test validity or satisfiability and display a countermodel when available.</p></a>
+</div>
+<h2>Tips</h2>
+<ul class="tips-list">
+<li>Use the symbol buttons or type formulas directly from the keyboard.</li>
+<li><code>~</code>, <code>!</code> → ¬ &nbsp;|&nbsp; <code>&amp;</code>, <code>^</code> → ∧ &nbsp;|&nbsp; <code>|</code> → ∨</li>
+<li><code>-&gt;</code> → → &nbsp;|&nbsp; <code>&lt;-&gt;</code> → ↔</li>
+<li><code>forall x</code>, <code>(x)</code> → ∀x &nbsp;|&nbsp; <code>exists x</code>, <code>(?x)</code> → ∃x</li>
+<li>To avoid conflict with term letter <code>v</code>, type <code>|</code> or ∨ for disjunction.</li>
+<li>In predicate logic, lowercase letters are treated as terms; a term is treated as a variable when bound by a quantifier and otherwise as a constant name.</li>
+</ul>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>Prof. Jinyeong Gim, Phil+Sci+Math+Logic Lab, Department of Philosophy, Chonnam National University</p></div></div></footer>
+</body>
+</html>

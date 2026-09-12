@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercises · CNU Logic Lab</title>
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/bilingual.css">
+</head>
+<body>
+<header class="site-header"><div class="container"><a class="brand" href="index.html">CNU Logic Lab</a><nav>
+<a href="truth-table.html">Truth Tables</a><a href="wff-checker.html">WFF · Main Connective</a><a href="natural-deduction.html">Natural Deduction</a><a href="truth-tree.html">Semantic Tableau</a><a href="exercises.html" class="active">Exercises</a>
+<span class="language-switch"><a href="../exercises.html">한국어</a><span class="sep">|</span><a class="active" href="exercises.html">English</a></span>
+</nav></div></header>
+<main class="container">
+<h1>Exercises</h1><p class="lead">Choose a problem below to open the relevant tool with the input prefilled.</p>
+<h2>1. Truth tables — formula classification</h2><div class="card"><p><strong>(1)</strong> Is <code>A∨¬A</code> a tautology? — <a href="truth-table.html?formula=A%E2%88%A8%C2%ACA">Try it</a></p><p><strong>(2)</strong> Is <code>(A→B)↔(¬B→¬A)</code> a tautology? — <a href="truth-table.html?formula=(A%E2%86%92B)%E2%86%94(%C2%ACB%E2%86%92%C2%ACA)">Try it</a></p><p><strong>(3)</strong> Does <code>(A→B)∧(¬A→B)</code> always have the same truth value as B? — <a href="truth-table.html?formula=(A%E2%86%92B)%E2%88%A7(%C2%ACA%E2%86%92B)">Try it</a></p></div>
+<h2>2. Truth tables — argument validity</h2><div class="card"><p><strong>(4)</strong> Modus tollens: <code>A→B, ¬B ⊢ ¬A</code> — <a href="truth-table.html?premises=A%E2%86%92B%7C%C2%ACB&conclusion=%C2%ACA">Try it</a></p><p><strong>(5)</strong> <code>A→B, B ⊢ A</code> — find a counterexample. — <a href="truth-table.html?premises=A%E2%86%92B%7CB&conclusion=A">Try it</a></p></div>
+<h2>3. WFF · Main Connective</h2><div class="card"><p><strong>(6)</strong> What is the main connective of <code>∀x(Fx→∃yRxy)</code>? — <a href="wff-checker.html?mode=pred&formula=%E2%88%80x(Fx%E2%86%92%E2%88%83yRxy)">Try it</a></p><p><strong>(7)</strong> What is the main connective of <code>¬(A∧B)∨C</code>? — <a href="wff-checker.html?mode=prop&formula=%C2%AC(A%E2%88%A7B)%E2%88%A8C">Try it</a></p></div>
+<h2>4. Semantic tableaux — validity</h2><div class="card"><p><strong>(8)</strong> <code>∀x(Fx→Gx), Fa ⊢ Ga</code> — <a href="truth-tree.html?mode=pred&premises=%E2%88%80x(Fx%E2%86%92Gx)%7CFa&conclusion=Ga">Try it</a></p><p><strong>(9)</strong> <code>∃xFx ⊢ ∀xFx</code> — find a countermodel. — <a href="truth-tree.html?mode=pred&premises=%E2%88%83xFx&conclusion=%E2%88%80xFx">Try it</a></p><p><strong>(10)</strong> <code>∃x∀yRxy ⊢ ∀y∃xRxy</code> — <a href="truth-tree.html?mode=pred&premises=%E2%88%83x%E2%88%80yRxy&conclusion=%E2%88%80y%E2%88%83xRxy">Try it</a></p></div>
+<h2>5. Natural deduction</h2><div class="card"><p><strong>(11)</strong> <code>A→B, B→C ⊢ A→C</code> — <a href="natural-deduction.html?mode=prop&premises=A%E2%86%92B%7CB%E2%86%92C&conclusion=A%E2%86%92C">Try it</a></p><p><strong>(12)</strong> <code>∀x(Fx→Gx), ∀x(Gx→Hx) ⊢ ∀x(Fx→Hx)</code> — <a href="natural-deduction.html?mode=pred&premises=%E2%88%80x(Fx%E2%86%92Gx)%7C%E2%88%80x(Gx%E2%86%92Hx)&conclusion=%E2%88%80x(Fx%E2%86%92Hx)">Try it</a></p><p><strong>(13)</strong> <code>A→B, A→¬B ⊢ ¬A</code> — <a href="natural-deduction.html?mode=prop&premises=A%E2%86%92B%7CA%E2%86%92%C2%ACB&conclusion=%C2%ACA">Try it</a></p></div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>Prof. Jinyeong Gim, Phil+Sci+Math+Logic Lab, Department of Philosophy, Chonnam National University</p><p class="footer-home">&larr; <a href="index.html">Home</a></p></div></div></footer>
+</body></html>
