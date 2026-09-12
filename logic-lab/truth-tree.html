@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>진리나무 · 기호논리학 실습도구</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">기호논리학 실습도구</a>
+    <nav>
+      <a href="index.html">홈</a>
+      <a href="truth-table.html">진리표</a>
+      <a href="wff-checker.html">적형식·주연결사</a>
+      <a href="natural-deduction.html">자연연역 증명기</a>
+      <a href="truth-tree.html" class="active">진리나무</a>
+      <a href="exercises.html">연습문제</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h1>진리나무 (Semantic Tableau)</h1>
+  <p class="lead">전제와 결론을 넣으면 진리나무를 자동으로 전개하여 타당성을 판정합니다. 문장논리·술어논리 모두 지원합니다.</p>
+  <p class="help-text">
+    술어논리 진리나무는 일반적으로 <strong>결정불가능(undecidable)</strong>합니다. 이 도구는 최대 전개 횟수를 두어,
+    한도 살에 끝나지 않으면 "확실치 않음"으로 표시합니다.
+  </p>
+
+  <div class="mode-toggle" id="mode-toggle">
+    <button data-mode="prop" type="button">문장논리</button>
+    <button data-mode="pred" type="button">술어논리</button>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">전제 → 결론 (타당성 검사)</h2>
+    <div id="premise-list"></div>
+    <button class="btn secondary small" id="add-premise">+ 전제 추가</button>
+    <div style="margin-top:0.8rem">
+      <label class="field-label">결론</label>
+      <input type="text" id="conclusion-input" placeholder="예: ∃xGx">
+    </div>
+    <div class="symbol-palette" id="palette"></div>
+    <div style="margin-top:0.6rem">
+      <button class="btn" id="run-validity">진리나무로 타당성 검사</button>
+      <button class="btn secondary" id="run-sat">(전제만) 충족가능성 검사</button>
+    </div>
+    <div class="msg" id="msg" style="display:none"></div>
+    <div id="model-wrap"></div>
+    <h3>나무 구조</h3>
+    <div id="tree-wrap" style="overflow-x:auto"></div>
+  </div>
+</main>
+<footer class="site-footer"><div class="container"><p>&larr; <a href="index.html">홈으로</a></p></div></footer>
+<script type="module" src="js/pages/truth-tree.js"></script>
+</body>
+</html>
