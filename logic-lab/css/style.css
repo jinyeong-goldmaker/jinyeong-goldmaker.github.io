@@ -1,0 +1,100 @@
+:root {
+  --bg: #f7f7f9;
+  --panel: #ffffff;
+  --text: #1c1e21;
+  --muted: #6b7280;
+  --border: #e2e4e9;
+  --accent: #3457d5;
+  --accent-hover: #2843ad;
+  --ok: #16803c;
+  --ok-bg: #eafaf0;
+  --bad: #c0362c;
+  --bad-bg: #fdecea;
+  --code-bg: #f0f1f5;
+  --link: #3457d5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181d;
+    --panel: #1e2127;
+    --text: #e7e9ee;
+    --muted: #9aa1ac;
+    --border: #30343c;
+    --accent: #7f9cff;
+    --accent-hover: #9db1ff;
+    --ok: #4fd17c;
+    --ok-bg: #10301c;
+    --bad: #ff8a80;
+    --bad-bg: #3a1614;
+    --code-bg: #262a32;
+    --link: #7f9cff;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 4rem; }
+a { color: var(--link); }
+.container { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+header.site-header { border-bottom: 1px solid var(--border); background: var(--panel); padding: 0.9rem 0; margin-bottom: 2rem; }
+header.site-header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+header.site-header .brand { font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--text); }
+header.site-header nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+header.site-header nav a { text-decoration: none; color: var(--muted); font-size: 0.92rem; }
+header.site-header nav a:hover, header.site-header nav a.active { color: var(--accent); }
+h1 { font-size: 1.6rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.2rem; margin: 2rem 0 0.6rem; }
+h3 { font-size: 1.02rem; margin: 1.2rem 0 0.4rem; }
+p.lead { color: var(--muted); margin-top: 0; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.3rem; margin-bottom: 1.4rem; }
+.mode-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 3px; background: var(--code-bg); margin-bottom: 1rem; }
+.mode-toggle button { border: none; background: transparent; padding: 0.4rem 1rem; border-radius: 999px; cursor: pointer; font-size: 0.9rem; color: var(--muted); }
+.mode-toggle button.active { background: var(--accent); color: white; }
+label.field-label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; }
+input[type=text], textarea, select { width: 100%; font-size: 1rem; padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); color: var(--text); font-family: "Cambria Math", "STIX Two Math", Georgia, serif; }
+textarea { font-family: inherit; }
+.symbol-palette { display: flex; gap: 0.35rem; margin: 0.5rem 0 0.9rem; flex-wrap: wrap; }
+.symbol-palette button { min-width: 2.1rem; padding: 0.3rem 0.5rem; border: 1px solid var(--border); border-radius: 6px; background: var(--code-bg); color: var(--text); cursor: pointer; font-size: 1.05rem; font-family: "Cambria Math", "STIX Two Math", Georgia, serif; }
+.symbol-palette button:hover { background: var(--border); }
+button.btn { background: var(--accent); color: white; border: none; padding: 0.55rem 1.1rem; border-radius: 8px; font-size: 0.95rem; cursor: pointer; margin-right: 0.5rem; }
+button.btn:hover { background: var(--accent-hover); }
+button.btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+button.btn.danger { background: var(--bad); }
+button.btn.small { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
+.msg { padding: 0.7rem 0.9rem; border-radius: 8px; margin: 0.7rem 0; font-size: 0.92rem; }
+.msg.ok { background: var(--ok-bg); color: var(--ok); }
+.msg.bad { background: var(--bad-bg); color: var(--bad); }
+.msg.info { background: var(--code-bg); color: var(--muted); }
+table.truth-table { border-collapse: collapse; width: 100%; font-family: "Cambria Math", "STIX Two Math", Georgia, serif; font-size: 0.95rem; }
+table.truth-table th, table.truth-table td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: center; }
+table.truth-table th { background: var(--code-bg); }
+table.truth-table td.main-col { font-weight: 600; }
+table.truth-table tr.counter-row { background: var(--bad-bg); }
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+.badge.tautology { background: var(--ok-bg); color: var(--ok); }
+.badge.contradiction { background: var(--bad-bg); color: var(--bad); }
+.badge.contingency { background: var(--code-bg); color: var(--muted); }
+.proof-line { display: grid; grid-template-columns: 2.4rem 1fr auto auto; gap: 0.5rem; align-items: start; padding: 0.35rem 0.2rem; border-bottom: 1px dashed var(--border); }
+.proof-line .lineno { color: var(--muted); font-size: 0.85rem; padding-top: 0.5rem; }
+.proof-line .formula-display { font-family: "Cambria Math", "STIX Two Math", Georgia, serif; font-size: 1.05rem; padding-top: 0.45rem; }
+.proof-box { border-left: 2px solid var(--muted); margin-left: 1.1rem; padding-left: 0.8rem; margin-bottom: 0.4rem; }
+.proof-box .assumption { border-bottom: 1px solid var(--muted); margin-bottom: 0.2rem; }
+.tree-node { font-family: "Cambria Math", "STIX Two Math", Georgia, serif; }
+ul.tree-list { list-style: none; padding-left: 1.1rem; margin: 0.15rem 0; border-left: 1px dotted var(--border); }
+ul.tree-list.root { border-left: none; padding-left: 0; }
+ul.tree-list li { position: relative; padding: 0.1rem 0 0.1rem 0.4rem; }
+.tree-closed { color: var(--bad); font-weight: 600; }
+.tree-open { color: var(--ok); font-weight: 600; }
+footer.site-footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+#single-table-wrap, #arg-table-wrap { overflow-x: auto; }
+@media (max-width: 640px) { .proof-line { grid-template-columns: 2rem 1fr; } .proof-line .lineno { grid-row: 1; } }
+.rule-select { max-width: 220px; display: inline-block; }
+.cites-input { max-width: 140px; display: inline-block; }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.tool-card { display: block; text-decoration: none; color: inherit; }
+.tool-card h3 { margin-top: 0; color: var(--accent); }
+.tool-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0; }
+.help-text { color: var(--muted); font-size: 0.85rem; }
+code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 4px; }
