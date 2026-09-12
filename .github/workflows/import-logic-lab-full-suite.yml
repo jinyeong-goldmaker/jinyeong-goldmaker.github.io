@@ -23,6 +23,7 @@ jobs:
         run: |
           cat \
             .logic-lab-import/part00 \
+            .logic-lab-import/part00_tail \
             .logic-lab-import/part01 \
             .logic-lab-import/part02_00 \
             .logic-lab-import/part02_01 \
