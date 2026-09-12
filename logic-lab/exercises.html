@@ -5,79 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>연습문제 · 전남대학교 논리학 실습도구</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bilingual.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
-    <nav>
-      <a href="index.html">홈</a>
-      <a href="truth-table.html">진리표</a>
-      <a href="wff-checker.html">적형식·주연결사</a>
-      <a href="natural-deduction.html">자연연역 증명기</a>
-      <a href="truth-tree.html">진리나무</a>
-      <a href="exercises.html" class="active">연습문제</a>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="container">
+<a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
+<nav>
+<a href="truth-table.html">진리표</a>
+<a href="wff-checker.html">적형식 · 주연결사 확인</a>
+<a href="natural-deduction.html">자연연역 증명기</a>
+<a href="truth-tree.html">진리나무</a>
+<a href="exercises.html" class="active">연습문제</a>
+<span class="language-switch"><a class="active" href="exercises.html">한국어</a><span class="sep">|</span><a href="en/exercises.html">English</a></span>
+</nav></div></header>
 <main class="container">
-  <h1>연습문제</h1>
-  <p class="lead">아래 문제를 눌러 관련 도구에서 바로 풀어보세요 (입력창이 자동으로 채워집니다).</p>
-
-  <h2>1. 진리표 — 문장 분류</h2>
-  <div class="card">
-    <p><strong>(1)</strong> <code>A∨¬A</code> 는 항진명제(tautology)인가?
-      — <a href="truth-table.html?formula=A%E2%88%A8%C2%ACA">풀어보기</a></p>
-    <p><strong>(2)</strong> <code>(A→B)↔(¬B→¬A)</code> (대우 법칙)은 항진명제인가?
-      — <a href="truth-table.html?formula=(A%E2%86%92B)%E2%86%94(%C2%ACB%E2%86%92%C2%ACA)">풀어보기</a></p>
-    <p><strong>(3)</strong> <code>(A→B)∧(¬A→B)</code> 는 어떤 경우에도 B와 같은 진리값을 가지는가? 진리표로 확인해보세요.
-      — <a href="truth-table.html?formula=(A%E2%86%92B)%E2%88%A7(%C2%ACA%E2%86%92B)">풀어보기</a></p>
-  </div>
-
-  <h2>2. 진리표 — 논증 타당성</h2>
-  <div class="card">
-    <p><strong>(4)</strong> 후건부정(modus tollens): <code>A→B, ¬B ⊢ ¬A</code> — 타당한가?
-      — <a href="truth-table.html?premises=A%E2%86%92B%7C%C2%ACB&conclusion=%C2%ACA">풀어보기</a></p>
-    <p><strong>(5)</strong> 전건긍정의 오류인지 확인: <code>A→B, B ⊢ A</code> — 타당한가? (반례를 찾아보세요)
-      — <a href="truth-table.html?premises=A%E2%86%92B%7CB&conclusion=A">풀어보기</a></p>
-  </div>
-
-  <h2>3. 적형식·주연결사</h2>
-  <div class="card">
-    <p><strong>(6)</strong> <code>∀x(Fx→∃yRxy)</code> 의 주연결사는 무엇인가?
-      — <a href="wff-checker.html?mode=pred&formula=%E2%88%80x(Fx%E2%86%92%E2%88%83yRxy)">풀어보기</a></p>
-    <p><strong>(7)</strong> <code>¬(A∧B)∨C</code> 의 주연결사는 무엇인가?
-      — <a href="wff-checker.html?mode=prop&formula=%C2%AC(A%E2%88%A7B)%E2%88%A8C">풀어보기</a></p>
-  </div>
-
-  <h2>4. 진리나무 — 타당성 검사</h2>
-  <div class="card">
-    <p><strong>(8)</strong> <code>∀x(Fx→Gx), Fa ⊢ Ga</code> — 진리나무로 타당성을 확인해보세요.
-      — <a href="truth-tree.html?mode=pred&premises=%E2%88%80x(Fx%E2%86%92Gx)%7CFa&conclusion=Ga">풀어보기</a></p>
-    <p><strong>(9)</strong> <code>∃xFx ⊢ ∀xFx</code> — 타당하지 않습니다. 반례(모형)를 진리나무에서 찾아보세요.
-      — <a href="truth-tree.html?mode=pred&premises=%E2%88%83xFx&conclusion=%E2%88%80xFx">풀어보기</a></p>
-    <p><strong>(10)</strong> 고전 논증: <code>∃x∀yRxy ⊢ ∀y∃xRxy</code> — 타당한가?
-      — <a href="truth-tree.html?mode=pred&premises=%E2%88%83x%E2%88%80yRxy&conclusion=%E2%88%80y%E2%88%83xRxy">풀어보기</a></p>
-  </div>
-
-  <h2>5. 자연연역 증명</h2>
-  <div class="card">
-    <p><strong>(11)</strong> 가언삼단논법을 직접 증명해보세요: <code>A→B, B→C ⊢ A→C</code>
-      (힌트: A를 가정하고 →E를 두 번 적용한 뒤 →I로 마무리)
-      — <a href="natural-deduction.html?mode=prop&premises=A%E2%86%92B%7CB%E2%86%92C&conclusion=A%E2%86%92C">풀어보기</a></p>
-    <p><strong>(12)</strong> <code>∀x(Fx→Gx), ∀x(Gx→Hx) ⊢ ∀x(Fx→Hx)</code>
-      (힌트: ∀E로 개체 a에 대해 예화한 뒤 →E를 두 번, 그리고 ∀I로 일반화)
-      — <a href="natural-deduction.html?mode=pred&premises=%E2%88%80x(Fx%E2%86%92Gx)%7C%E2%88%80x(Gx%E2%86%92Hx)&conclusion=%E2%88%80x(Fx%E2%86%92Hx)">풀어보기</a></p>
-    <p><strong>(13)</strong> 귀류법: <code>A→B, A→¬B ⊢ ¬A</code>
-      (힌트: A를 가정해서 B와 ¬B를 모두 이끌어내 ⊥를 얻고 ¬I를 적용)
-      — <a href="natural-deduction.html?mode=prop&premises=A%E2%86%92B%7CA%E2%86%92%C2%ACB&conclusion=%C2%ACA">풀어보기</a></p>
-  </div>
-
-  <p class="help-text">더 어려운 도전: 진리나무 도구에서 <code>∃x∀yRxy ⊢ ∀y∃xRxy</code>의 역방향인
-    <code>∀y∃xRxy ⊢ ∃x∀yRxy</code> 도 입력해 보세요. 실제로는 타당하지 않은 논증이지만(반례: 2개짜리 정의역에 R을 "같지 않다"로 두면 됩니다),
-    이 도구는 유한한 반례를 찾지 못하고 "확실치 않음"을 표시할 수도 있습니다 — 술어논리 타당성 판정이 일반적으로
-    <strong>결정불가능</strong>하다는 사실을 직접 체험해보는 좋은 예시입니다.</p>
+<h1>연습문제</h1>
+<p class="lead">아래 문제를 눌러 관련 도구에서 바로 풀어보세요 (입력창이 자동으로 채워집니다).</p>
+<h2>1. 진리표 — 문장 분류</h2><div class="card"><p><strong>(1)</strong> <code>A∨¬A</code> 는 항진명제(tautology)인가? — <a href="truth-table.html?formula=A%E2%88%A8%C2%ACA">풀어보기</a></p><p><strong>(2)</strong> <code>(A→B)↔(¬B→¬A)</code> (대우 법칙)은 항진명제인가? — <a href="truth-table.html?formula=(A%E2%86%92B)%E2%86%94(%C2%ACB%E2%86%92%C2%ACA)">풀어보기</a></p><p><strong>(3)</strong> <code>(A→B)∧(¬A→B)</code> 는 어떤 경우에도 B와 같은 진리값을 가지는가? — <a href="truth-table.html?formula=(A%E2%86%92B)%E2%88%A7(%C2%ACA%E2%86%92B)">풀어보기</a></p></div>
+<h2>2. 진리표 — 논증 타당성</h2><div class="card"><p><strong>(4)</strong> 후건부정(modus tollens): <code>A→B, ¬B ⊢ ¬A</code> — <a href="truth-table.html?premises=A%E2%86%92B%7C%C2%ACB&conclusion=%C2%ACA">풀어보기</a></p><p><strong>(5)</strong> <code>A→B, B ⊢ A</code> — 반례를 찾아보세요. — <a href="truth-table.html?premises=A%E2%86%92B%7CB&conclusion=A">풀어보기</a></p></div>
+<h2>3. 적형식 · 주연결사 확인</h2><div class="card"><p><strong>(6)</strong> <code>∀x(Fx→∃yRxy)</code> 의 주연결사는 무엇인가? — <a href="wff-checker.html?mode=pred&formula=%E2%88%80x(Fx%E2%86%92%E2%88%83yRxy)">풀어보기</a></p><p><strong>(7)</strong> <code>¬(A∧B)∨C</code> 의 주연결사는 무엇인가? — <a href="wff-checker.html?mode=prop&formula=%C2%AC(A%E2%88%A7B)%E2%88%A8C">풀어보기</a></p></div>
+<h2>4. 진리나무 — 타당성 검사</h2><div class="card"><p><strong>(8)</strong> <code>∀x(Fx→Gx), Fa ⊢ Ga</code> — <a href="truth-tree.html?mode=pred&premises=%E2%88%80x(Fx%E2%86%92Gx)%7CFa&conclusion=Ga">풀어보기</a></p><p><strong>(9)</strong> <code>∃xFx ⊢ ∀xFx</code> — 반례(모형)를 찾아보세요. — <a href="truth-tree.html?mode=pred&premises=%E2%88%83xFx&conclusion=%E2%88%80xFx">풀어보기</a></p><p><strong>(10)</strong> <code>∃x∀yRxy ⊢ ∀y∃xRxy</code> — <a href="truth-tree.html?mode=pred&premises=%E2%88%83x%E2%88%80yRxy&conclusion=%E2%88%80y%E2%88%83xRxy">풀어보기</a></p></div>
+<h2>5. 자연연역 증명</h2><div class="card"><p><strong>(11)</strong> <code>A→B, B→C ⊢ A→C</code> — <a href="natural-deduction.html?mode=prop&premises=A%E2%86%92B%7CB%E2%86%92C&conclusion=A%E2%86%92C">풀어보기</a></p><p><strong>(12)</strong> <code>∀x(Fx→Gx), ∀x(Gx→Hx) ⊢ ∀x(Fx→Hx)</code> — <a href="natural-deduction.html?mode=pred&premises=%E2%88%80x(Fx%E2%86%92Gx)%7C%E2%88%80x(Gx%E2%86%92Hx)&conclusion=%E2%88%80x(Fx%E2%86%92Hx)">풀어보기</a></p><p><strong>(13)</strong> <code>A→B, A→¬B ⊢ ¬A</code> — <a href="natural-deduction.html?mode=prop&premises=A%E2%86%92B%7CA%E2%86%92%C2%ACB&conclusion=%C2%ACA">풀어보기</a></p></div>
+<p class="help-text">더 어려운 도전: <code>∀y∃xRxy ⊢ ∃x∀yRxy</code>도 진리나무에서 시험해 보세요. 술어논리 타당성 판정이 일반적으로 <strong>결정불가능</strong>하다는 점을 확인할 수 있습니다.</p>
 </main>
-<footer class="site-footer"><div class="container"><p>&larr; <a href="index.html">홈으로</a></p></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>전남대학교 인문대학 철학과 Phil+Sci+Math+Logic 김진영 교수 Lab (goldmaker@jnu.ac.kr)</p><p class="footer-home">&larr; <a href="index.html">홈으로</a></p></div></div></footer>
 </body>
 </html>
