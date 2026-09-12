@@ -23,7 +23,7 @@
     --muted: #9aa1ac;
     --border: #30343c;
     --accent: #59c98a;
-    --accent-hover: #7bd9a3;
+    --accent-hover: #3aae72;
     --ok: #4fd17c;
     --ok-bg: #10301c;
     --bad: #ff8a80;
@@ -78,8 +78,10 @@ header.site-header nav a {
   color: var(--muted);
   font-size: 0.92rem;
 }
-header.site-header nav a:hover, header.site-header nav a.active {
+header.site-header nav a:hover,
+header.site-header nav a.active {
   color: var(--accent);
+  font-weight: 600;
 }
 
 h1 { font-size: 1.6rem; margin: 0 0 0.4rem; }
@@ -97,10 +99,10 @@ p.lead { color: var(--muted); margin-top: 0; }
 
 .mode-toggle {
   display: inline-flex;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: 999px;
   padding: 3px;
-  background: var(--code-bg);
+  background: transparent;
   margin-bottom: 1rem;
 }
 .mode-toggle button {
@@ -110,8 +112,9 @@ p.lead { color: var(--muted); margin-top: 0; }
   border-radius: 999px;
   cursor: pointer;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--accent);
 }
+.mode-toggle button:hover,
 .mode-toggle button.active {
   background: var(--accent);
   color: white;
@@ -145,33 +148,40 @@ textarea { font-family: inherit; }
 .symbol-palette button {
   min-width: 2.1rem;
   padding: 0.3rem 0.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: 6px;
-  background: var(--code-bg);
-  color: var(--text);
+  background: var(--accent);
+  color: white;
   cursor: pointer;
   font-size: 1.05rem;
   font-family: "Cambria Math", "STIX Two Math", Georgia, serif;
 }
-.symbol-palette button:hover { background: var(--border); }
+.symbol-palette button:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 
 button.btn {
   background: var(--accent);
   color: white;
-  border: none;
+  border: 1px solid var(--accent);
   padding: 0.55rem 1.1rem;
   border-radius: 8px;
   font-size: 0.95rem;
   cursor: pointer;
   margin-right: 0.5rem;
 }
-button.btn:hover { background: var(--accent-hover); }
+button.btn:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
 button.btn.secondary {
-  background: transparent;
-  color: var(--accent);
+  background: var(--accent);
+  color: white;
   border: 1px solid var(--accent);
 }
-button.btn.danger { background: var(--bad); }
+button.btn.secondary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+button.btn.danger { background: var(--bad); border-color: var(--bad); }
 button.btn.small { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
 
 .msg { padding: 0.7rem 0.9rem; border-radius: 8px; margin: 0.7rem 0; font-size: 0.92rem; }
@@ -243,15 +253,9 @@ footer.site-footer {
 }
 
 #single-table-wrap, #arg-table-wrap { overflow-x: auto; }
-
-@media (max-width: 640px) {
-  .proof-line { grid-template-columns: 2rem 1fr; }
-  .proof-line .lineno { grid-row: 1; }
-  .tool-grid { grid-template-columns: 1fr; }
-}
-
 .rule-select { max-width: 220px; display: inline-block; }
 .cites-input { max-width: 140px; display: inline-block; }
+
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -263,16 +267,18 @@ footer.site-footer {
   text-decoration: none;
   color: inherit;
   margin-bottom: 0;
-  border-top: 4px solid var(--accent);
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid var(--accent);
+  border-top: 5px solid var(--accent);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 .tool-card:hover {
   transform: translateY(-2px);
-  border-color: var(--accent);
+  background: var(--ok-bg);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 .tool-card h3 { margin-top: 0; color: var(--accent); }
 .tool-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0; }
+
 .tips-list {
   margin: 0.5rem 0 0;
   padding-left: 1.25rem;
@@ -283,3 +289,9 @@ footer.site-footer {
 }
 .help-text { color: var(--muted); font-size: 0.85rem; }
 code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+@media (max-width: 640px) {
+  .proof-line { grid-template-columns: 2rem 1fr; }
+  .proof-line .lineno { grid-row: 1; }
+  .tool-grid { grid-template-columns: 1fr; }
+}
