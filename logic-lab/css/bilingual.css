@@ -16,6 +16,8 @@ header.site-header .brand {
   gap: 0.55rem;
   white-space: nowrap;
   flex: 0 0 auto;
+  position: relative;
+  left: 1.5cm;
 }
 header.site-header .brand::before {
   content: "";
@@ -102,6 +104,9 @@ header.site-header nav {
     max-width: 880px;
     flex-wrap: wrap;
     align-items: flex-start;
+  }
+  header.site-header .brand {
+    left: 0;
   }
   header.site-header nav {
     flex-wrap: wrap;
