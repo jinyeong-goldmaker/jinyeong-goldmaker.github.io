@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>기호논리학 실습도구</title>
-<meta name="description" content="문장논리·술어논리 실습 도구 모음 — 진리표, 적형식·주연결사 확인, 자연연역 증명기, 진리나무.">
+<title>전남대학교 논리학 실습도구</title>
+<meta name="description" content="전남대학교 학생들을 위한 문장논리·술어논리 실습 도구 — 진리표, 적형식·주연결사 확인, 자연연역 증명기, 진리나무.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html">기호논리학 실습도구</a>
+    <a class="brand" href="index.html">전남대학교 논리학 실습도구</a>
     <nav>
       <a href="index.html" class="active">홈</a>
       <a href="truth-table.html">진리표</a>
@@ -22,12 +22,9 @@
   </div>
 </header>
 <main class="container">
-  <h1>기호논리학 실습도구</h1>
+  <h1>전남대학교 논리학 실습도구</h1>
   <p class="lead">
-    문장논리(propositional logic)와 술어논리(predicate logic)를 함께 연습할 수 있는 무료 웹 도구입니다.
-    <a href="https://sites.google.com/view/school-of-logic/" target="_blank" rel="noopener">논리학당</a>의 진리표·적형식 확인 도구와
-    <a href="https://zolaist.org/logic/" target="_blank" rel="noopener">기호논리학 실습실</a>의 자연연역 증명 검증기에서 영감을 받아,
-    두 도구의 장점을 한 곳에 모으고 진리나무(semantic tableau) 검사를 더했습니다.
+    전남대학교 학생들이 문장논리(propositional logic)와 술어논리(predicate logic)를 함께 연습할 수 있는 실습도구입니다.
   </p>
 
   <div class="tool-grid">
@@ -44,27 +41,24 @@
       <p>전제와 결론을 입력한 뒤, 한 줄씩 규칙을 적용해 증명을 작성하면 각 줄이 올바른지 즉시 검증해 줍니다. 가정을 이용한 하위증명(→I, ¬I, ∨E, ∃E 등)도 지원합니다.</p>
     </a>
     <a class="tool-card card" href="truth-tree.html">
-      <h3>진리나무 (semantic tableau)</h3>
-      <p>전제와 결론(또는 문장 하나)을 넣으면 진리나무를 자동으로 전개해 타당성/충족가능성을 판정하고, 무효인 경우 반례(모형)를 보여줍니다.</p>
+      <h3>진리나무</h3>
+      <p>전제와 결론(또는 문장 하나)을 넣으면 진리나무(semantic tableau)를 자동으로 전개해 타당성/충족가능성을 판정하고, 무효인 경우 반례(모형)를 보여줍니다.</p>
     </a>
   </div>
 
   <h2>사용 팁</h2>
-  <p>
-    기호는 화면의 기호 버튼을 눌러 입력하거나, 키보드로 직접 입력할 수 있습니다. 예를 들어
-    <code>~</code>, <code>!</code> → ¬ &nbsp;|&nbsp; <code>&amp;</code>, <code>^</code> → ∧ &nbsp;|&nbsp;
-    <code>|</code> → ∨ &nbsp;|&nbsp; <code>-&gt;</code> → → &nbsp;|&nbsp; <code>&lt;-&gt;</code> → ↔ &nbsp;|&nbsp;
-    <code>forall x</code>, <code>(x)</code> → ∀x &nbsp;|&nbsp; <code>exists x</code>, <code>(?x)</code> → ∃x 로 자동 변환됩니다.
-    (술어논리 항 문자 <code>v</code>와의 충돌을 피하기 위해 <code>v</code>는 ∨로 자동 변환되지 않습니다 — <code>|</code>나 ∨ 기호를 사용하세요.)
-  </p>
-  <p class="help-text">
-    술어논리에서 소문자는 모두 항(term)입니다. 특정 문자가 변항인지 상항인지는 별도로 구분하지 않고,
-    양화사에 의해 묶여 있으면 그 범위 안에서는 변항으로, 묶여 있지 않으면 상항(고정된 이름)으로 취급합니다.
-  </p>
+  <ul class="tips-list">
+    <li>화면의 기호 버튼을 눌러 논리 기호를 입력하거나, 키보드로 직접 입력할 수 있습니다.</li>
+    <li><code>~</code>, <code>!</code> → ¬ &nbsp;|&nbsp; <code>&amp;</code>, <code>^</code> → ∧ &nbsp;|&nbsp; <code>|</code> → ∨</li>
+    <li><code>-&gt;</code> → → &nbsp;|&nbsp; <code>&lt;-&gt;</code> → ↔</li>
+    <li><code>forall x</code>, <code>(x)</code> → ∀x &nbsp;|&nbsp; <code>exists x</code>, <code>(?x)</code> → ∃x 로 자동 변환됩니다.</li>
+    <li>술어논리 항 문자 <code>v</code>와의 충돌을 피하기 위해 <code>v</code>는 ∨로 자동 변환되지 않습니다. <code>|</code>나 ∨ 기호를 사용하세요.</li>
+    <li>술어논리에서 소문자는 모두 항(term)이며, 양화사에 의해 묶이면 해당 범위 안에서는 변항으로, 묶여 있지 않으면 상항(고정된 이름)으로 취급합니다.</li>
+  </ul>
 </main>
 <footer class="site-footer">
   <div class="container">
-    <p>이 도구는 학습·연습 목적의 오픈소스 프로젝트입니다. 버그 제보나 개선 제안은 GitHub 저장소의 이슈로 남겨주세요.</p>
+    <p>전남대학교 인문대학 철학과 Phil+Sci+Math+Logic Lab (goldmaker@jnu.ac.kr)</p>
   </div>
 </footer>
 </body>
