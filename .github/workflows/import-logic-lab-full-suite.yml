@@ -1,0 +1,55 @@
+name: Import Logic Lab full suite
+
+on:
+  push:
+    branches: [logic-lab-full-suite]
+    paths:
+      - '.logic-lab-import/**'
+      - '.github/workflows/import-logic-lab-full-suite.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: logic-lab-full-suite
+
+      - name: Reconstruct archive
+        run: |
+          cat \
+            .logic-lab-import/part00 \
+            .logic-lab-import/part01 \
+            .logic-lab-import/part02_00 \
+            .logic-lab-import/part02_01 \
+            .logic-lab-import/part02_02 \
+            .logic-lab-import/part02_03 \
+            .logic-lab-import/part02_04 \
+            .logic-lab-import/part03_00 \
+            .logic-lab-import/part03_01 \
+            .logic-lab-import/part03_02 \
+            .logic-lab-import/part03_03 \
+            | base64 -d > /tmp/symbolic-logic-lab.zip
+          rm -rf /tmp/logic-import
+          mkdir -p /tmp/logic-import
+          unzip -q /tmp/symbolic-logic-lab.zip -d /tmp/logic-import
+          rm -rf logic-lab
+          mkdir logic-lab
+          cp -a /tmp/logic-import/symbolic-logic-lab/. logic-lab/
+
+      - name: Verify tests
+        working-directory: logic-lab
+        run: npm test
+
+      - name: Commit imported suite
+        run: |
+          rm -rf .logic-lab-import
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A logic-lab .logic-lab-import
+          git commit -m "Import complete symbolic logic lab suite"
+          git push origin HEAD:logic-lab-full-suite
