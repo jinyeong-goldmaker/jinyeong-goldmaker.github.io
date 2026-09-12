@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic Tableau · CNU Logic Lab</title>
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/bilingual.css">
+</head>
+<body>
+<header class="site-header"><div class="container"><a class="brand" href="index.html">CNU Logic Lab</a><nav>
+<a href="truth-table.html">Truth Tables</a><a href="wff-checker.html">WFF · Main Connective</a><a href="natural-deduction.html">Natural Deduction</a><a href="truth-tree.html" class="active">Semantic Tableau</a><a href="exercises.html">Exercises</a>
+<span class="language-switch"><a href="../truth-tree.html">한국어</a><span class="sep">|</span><a class="active" href="truth-tree.html">English</a></span>
+</nav></div></header>
+<main class="container">
+<h1>Semantic Tableau</h1><p class="lead">Enter premises and a conclusion to expand a semantic tableau automatically and test validity. Both propositional and predicate logic are supported.</p>
+<p class="help-text">Predicate-logic tableaux are generally <strong>undecidable</strong>. This tool imposes a finite expansion limit and reports an undetermined result if the procedure does not terminate within that limit.</p>
+<div class="mode-toggle" id="mode-toggle"><button data-mode="prop" type="button">Propositional Logic</button><button data-mode="pred" type="button">Predicate Logic</button></div>
+<div class="card"><h2 style="margin-top:0">Premises → Conclusion (Validity)</h2><div id="premise-list"></div><button class="btn secondary small" id="add-premise">+ Add premise</button><div style="margin-top:0.8rem"><label class="field-label">Conclusion</label><input type="text" id="conclusion-input" placeholder="e.g. ∃xGx"></div><div class="symbol-palette" id="palette"></div><div style="margin-top:0.6rem"><button class="btn" id="run-validity">Check validity by tableau</button><button class="btn secondary" id="run-sat">Check satisfiability (premises only)</button></div><div class="msg" id="msg" style="display:none"></div><div id="model-wrap"></div><h3>Tree structure</h3><div id="tree-wrap" style="overflow-x:auto"></div></div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-row"><p>Prof. Jinyeong Gim, Phil+Sci+Math+Logic Lab, Department of Philosophy, Chonnam National University</p><p class="footer-home">&larr; <a href="index.html">Home</a></p></div></div></footer>
+<script>if(!new URLSearchParams(location.search).has('mode')){const u=new URL(location.href);u.searchParams.set('mode','prop');history.replaceState(null,'',u);}</script>
+<script type="module" src="../js/pages/truth-tree.js"></script><script src="../js/lang-en.js"></script>
+</body></html>
