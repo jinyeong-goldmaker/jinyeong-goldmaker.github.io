@@ -23,9 +23,9 @@ header.site-header .brand::before {
   content: "";
   display: block;
   width: 132px;
-  height: 40px;
+  height: 32px;
   flex: 0 0 132px;
-  background-image: url("../assets/cnu-logo-full.png");
+  background-image: url("../assets/cnu-logo-original-web.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -91,7 +91,7 @@ header.site-header nav {
   }
   header.site-header .brand::before {
     width: 118px;
-    height: 36px;
+    height: 29px;
     flex-basis: 118px;
   }
   header.site-header nav {
@@ -113,7 +113,7 @@ header.site-header nav {
   }
   header.site-header .brand::before {
     width: 112px;
-    height: 34px;
+    height: 27px;
     flex-basis: 112px;
   }
   header.site-header nav {
