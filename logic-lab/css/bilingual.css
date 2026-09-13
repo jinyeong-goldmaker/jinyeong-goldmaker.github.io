@@ -4,6 +4,7 @@
   gap: 1rem !important;
 }
 
+/* Header brand: intentionally isolated from all legacy brand/image sizing. */
 header.site-header .container {
   max-width: 1180px;
   justify-content: flex-start;
@@ -11,6 +12,7 @@ header.site-header .container {
   gap: 0;
 }
 header.site-header .brand {
+  all: unset;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -18,13 +20,31 @@ header.site-header .brand {
   flex: 0 0 auto;
   position: relative;
   left: 1.5cm;
+  cursor: pointer;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  overflow: visible;
 }
 header.site-header .brand-logo {
+  all: unset;
   display: block;
-  width: 132px;
-  height: auto;
+  height: 1.365rem;
+  width: auto;
+  max-width: none;
+  max-height: none;
   flex: 0 0 auto;
-  object-fit: contain;
+  object-fit: fill;
+  overflow: visible;
+}
+header.site-header .brand span {
+  display: block;
+  color: #111;
+  font: inherit;
+  line-height: 1;
 }
 header.site-header nav {
   flex-wrap: nowrap;
@@ -67,9 +87,7 @@ header.site-header nav {
   color: var(--muted);
   font-weight: 400;
 }
-.footer-row a {
-  font-weight: 400;
-}
+.footer-row a { font-weight: 400; }
 .footer-home {
   white-space: nowrap;
   color: var(--accent) !important;
@@ -81,12 +99,7 @@ header.site-header nav {
 }
 
 @media (max-width: 900px) {
-  header.site-header .container {
-    align-items: center;
-  }
-  header.site-header .brand-logo {
-    width: 118px;
-  }
+  header.site-header .container { align-items: center; }
   header.site-header nav {
     gap: 0.55rem;
     font-size: 0.9rem;
@@ -101,12 +114,7 @@ header.site-header nav {
     flex-wrap: wrap;
     align-items: flex-start;
   }
-  header.site-header .brand {
-    left: 0;
-  }
-  header.site-header .brand-logo {
-    width: 112px;
-  }
+  header.site-header .brand { left: 0; }
   header.site-header nav {
     flex-wrap: wrap;
     white-space: normal;
