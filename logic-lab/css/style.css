@@ -287,11 +287,51 @@ footer.site-footer {
   margin: 0.45rem 0;
   padding-left: 0.2rem;
 }
+.tip-conversions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 0.9rem;
+  margin-top: 0.45rem;
+}
+.tip-conversion {
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+.tip-conversion strong {
+  font-family: "Cambria Math", "STIX Two Math", Georgia, serif;
+  font-size: 1.05rem;
+}
 .help-text { color: var(--muted); font-size: 0.85rem; }
 code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+.rule-help-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 0.7rem;
+}
+.rule-help-item {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.55rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.42rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--panel);
+  font-size: 0.82rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.rule-help-item strong {
+  color: var(--accent);
+  font-family: "Cambria Math", "STIX Two Math", Georgia, serif;
+}
 
 @media (max-width: 640px) {
   .proof-line { grid-template-columns: 2rem 1fr; }
   .proof-line .lineno { grid-row: 1; }
   .tool-grid { grid-template-columns: 1fr; }
+  .tip-conversions { grid-template-columns: 1fr; }
+  .rule-help-grid { grid-template-columns: 1fr; }
 }
