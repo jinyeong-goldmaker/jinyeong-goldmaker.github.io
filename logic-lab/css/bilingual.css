@@ -105,6 +105,23 @@ header.site-header nav {
   }
 }
 
+/* Desktop header: keep the brand and language switch anchored.
+   Only the spacing between the five tool links is doubled. */
+@media (min-width: 901px) {
+  header.site-header nav {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 0;
+    margin-left: 2rem;
+  }
+  header.site-header nav > a + a {
+    margin-left: 1.44rem;
+  }
+  header.site-header nav > .language-switch {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 900px) {
   header.site-header .container { align-items: center; }
   header.site-header nav {
