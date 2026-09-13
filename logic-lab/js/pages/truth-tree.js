@@ -3,7 +3,7 @@ import { checkValidityByTree, checkSatisfiability } from '../lib/tree.js';
 import { PALETTE_PROP, PALETTE_PRED } from '../lib/symbols.js';
 import { wirePalette, wireModeToggle, showMessage, el } from '../lib/ui.js';
 
-let mode = 'pred';
+let mode = 'prop';
 const conclusionInput = document.getElementById('conclusion-input');
 const paletteEl = document.getElementById('palette');
 
