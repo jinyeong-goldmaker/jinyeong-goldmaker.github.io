@@ -21,14 +21,14 @@ header.site-header .brand {
 }
 header.site-header .brand::before {
   content: "";
-  display: inline-block;
-  width: 125px;
-  height: 36px;
-  flex: 0 0 125px;
-  background-image: url("../assets/cnu-logo.png");
+  display: block;
+  width: 132px;
+  height: 40px;
+  flex: 0 0 132px;
+  background-image: url("../assets/cnu-logo-full.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 125px auto;
+  background-position: center center;
+  background-size: contain;
   border-radius: 0;
 }
 header.site-header nav {
@@ -90,10 +90,9 @@ header.site-header nav {
     align-items: center;
   }
   header.site-header .brand::before {
-    width: 109px;
-    height: 32px;
-    flex-basis: 109px;
-    background-size: 109px auto;
+    width: 118px;
+    height: 36px;
+    flex-basis: 118px;
   }
   header.site-header nav {
     gap: 0.55rem;
@@ -111,6 +110,11 @@ header.site-header nav {
   }
   header.site-header .brand {
     left: 0;
+  }
+  header.site-header .brand::before {
+    width: 112px;
+    height: 34px;
+    flex-basis: 112px;
   }
   header.site-header nav {
     flex-wrap: wrap;
