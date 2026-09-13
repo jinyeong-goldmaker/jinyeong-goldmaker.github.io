@@ -1,0 +1,18 @@
+/* Header navigation spacing refinement.
+   Keep the brand and language switch anchored; increase spacing only between
+   the five tool navigation links. */
+@media (min-width: 901px) {
+  header.site-header nav {
+    display: flex;
+    gap: 0;
+    margin-left: auto;
+  }
+
+  header.site-header nav > a + a {
+    margin-left: 1.44rem;
+  }
+
+  header.site-header nav > .language-switch {
+    margin-left: 0.2rem;
+  }
+}
