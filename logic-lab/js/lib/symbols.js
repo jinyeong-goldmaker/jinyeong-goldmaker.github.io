@@ -75,7 +75,9 @@ export function normalize(input) {
   return s;
 }
 
-// Palette definitions used by the on-screen symbol buttons (id -> {label, insert})
+// Palette definitions used by the on-screen symbol buttons (id -> {label, insert}).
+// Parentheses are deliberately placed last so they are visually separated from
+// logical operators while remaining available anywhere a formula is entered.
 export const PALETTE_PROP = [
   { label: '¬', insert: SYM.NOT },
   { label: '∧', insert: SYM.AND },
@@ -83,6 +85,8 @@ export const PALETTE_PROP = [
   { label: '→', insert: SYM.IMP },
   { label: '↔', insert: SYM.IFF },
   { label: '⊥', insert: SYM.FALSUM },
+  { label: '(', insert: '(', title: '여는 괄호 / Open parenthesis' },
+  { label: ')', insert: ')', title: '닫는 괄호 / Close parenthesis' },
 ];
 
 export const PALETTE_PRED = [
