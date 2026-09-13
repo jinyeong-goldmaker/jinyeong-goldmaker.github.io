@@ -32,7 +32,7 @@ header.site-header .brand {
 header.site-header .brand-logo {
   all: unset;
   display: block;
-  height: 1.365rem;
+  height: 35px;
   width: auto;
   max-width: none;
   max-height: none;
@@ -116,6 +116,7 @@ header.site-header nav {
     align-items: flex-start;
   }
   header.site-header .brand { left: 0; }
+  header.site-header .brand-logo { height: 32px; }
   header.site-header nav {
     flex-wrap: wrap;
     white-space: normal;
