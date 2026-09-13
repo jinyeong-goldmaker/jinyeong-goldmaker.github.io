@@ -23,9 +23,12 @@ header.site-header .brand::before {
   content: "";
   display: inline-block;
   width: 125px;
-  height: 31px;
+  height: 36px;
   flex: 0 0 125px;
-  background: url("../assets/cnu-logo.png") center / contain no-repeat;
+  background-image: url("../assets/cnu-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 125px auto;
   border-radius: 0;
 }
 header.site-header nav {
@@ -88,8 +91,9 @@ header.site-header nav {
   }
   header.site-header .brand::before {
     width: 109px;
-    height: 27px;
+    height: 32px;
     flex-basis: 109px;
+    background-size: 109px auto;
   }
   header.site-header nav {
     gap: 0.55rem;
