@@ -95,6 +95,16 @@ header.site-header nav {
   font-weight: 400 !important;
 }
 
+/* Keep the official green/black CNU logo legible on dark system themes. */
+@media (prefers-color-scheme: dark) {
+  header.site-header .brand-logo {
+    background: #fff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    box-sizing: content-box;
+  }
+}
+
 @media (max-width: 900px) {
   header.site-header .container { align-items: center; }
   header.site-header nav {
