@@ -35,11 +35,27 @@
 
   <h2>사용 팁</h2>
   <ul class="tips-list">
-    <li>화면의 기호 버튼을 눌러 논리 기호를 입력하거나, 키보드로 직접 입력할 수 있습니다.</li>
-    <li><code>~</code>, <code>!</code> → ¬ &nbsp;|&nbsp; <code>&amp;</code>, <code>^</code> → ∧ &nbsp;|&nbsp; <code>|</code> → ∨</li>
-    <li><code>-&gt;</code> → → &nbsp;|&nbsp; <code>&lt;-&gt;</code> → ↔</li>
-    <li><code>forall x</code>, <code>(x)</code> → ∀x &nbsp;|&nbsp; <code>exists x</code>, <code>(?x)</code> → ∃x 로 자동 변환됩니다.</li>
-    <li>술어논리 항 문자 <code>v</code>와의 충돌을 피하기 위해 <code>v</code>는 ∨로 자동 변환되지 않습니다. <code>|</code>나 ∨ 기호를 사용하세요.</li>
+    <li>화면의 논리기호 버튼을 눌러 입력하거나, 아래의 키보드 입력법을 사용할 수 있습니다.</li>
+    <li>
+      <strong>문장논리 기호 입력</strong>
+      <div class="tip-conversions">
+        <span class="tip-conversion"><code>~</code> 또는 <code>!</code> 입력: <strong>¬</strong> (부정)</span>
+        <span class="tip-conversion"><code>&amp;</code> 또는 <code>^</code> 입력: <strong>∧</strong> (연언)</span>
+        <span class="tip-conversion"><code>|</code> 입력: <strong>∨</strong> (선언)</span>
+        <span class="tip-conversion"><code>-&gt;</code> 입력: <strong>→</strong> (조건언)</span>
+        <span class="tip-conversion"><code>&lt;-&gt;</code> 입력: <strong>↔</strong> (쌍조건언)</span>
+        <span class="tip-conversion"><code>\bot</code> 입력: <strong>⊥</strong> (모순)</span>
+      </div>
+    </li>
+    <li>
+      <strong>술어논리 기호 입력</strong>
+      <div class="tip-conversions">
+        <span class="tip-conversion"><code>forall x</code> 또는 <code>(x)</code> 입력: <strong>∀x</strong> (전칭양화)</span>
+        <span class="tip-conversion"><code>exists x</code> 또는 <code>(?x)</code> 입력: <strong>∃x</strong> (존재양화)</span>
+        <span class="tip-conversion"><code>!=</code> 입력: <strong>≠</strong> (부등)</span>
+      </div>
+    </li>
+    <li>술어논리의 항 문자 <code>v</code>와 선언 기호가 혼동되지 않도록, 선언은 <code>|</code> 또는 화면의 <strong>∨</strong> 버튼을 사용하세요.</li>
     <li>술어논리에서 소문자는 모두 항(term)이며, 양화사에 의해 묶이면 해당 범위 안에서는 변항으로, 묶여 있지 않으면 상항(고정된 이름)으로 취급합니다.</li>
   </ul>
 </main>

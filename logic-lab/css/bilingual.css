@@ -22,9 +22,9 @@ header.site-header .brand {
 header.site-header .brand::before {
   content: "";
   display: inline-block;
-  width: 96px;
-  height: 24px;
-  flex: 0 0 96px;
+  width: 125px;
+  height: 31px;
+  flex: 0 0 125px;
   background: url("../assets/cnu-logo.png") center / contain no-repeat;
   border-radius: 0;
 }
@@ -66,7 +66,7 @@ header.site-header nav {
 }
 .footer-row p {
   margin: 0;
-  color: #000;
+  color: var(--muted);
   font-weight: 400;
 }
 .footer-row a {
@@ -87,9 +87,9 @@ header.site-header nav {
     align-items: center;
   }
   header.site-header .brand::before {
-    width: 84px;
-    height: 21px;
-    flex-basis: 84px;
+    width: 109px;
+    height: 27px;
+    flex-basis: 109px;
   }
   header.site-header nav {
     gap: 0.55rem;

@@ -3,12 +3,19 @@ import { checkValidityByTree, checkSatisfiability } from '../lib/tree.js';
 import { PALETTE_PROP, PALETTE_PRED } from '../lib/symbols.js';
 import { wirePalette, wireModeToggle, showMessage, el } from '../lib/ui.js';
 
-let mode = 'pred';
+let mode = 'prop';
 const conclusionInput = document.getElementById('conclusion-input');
 const paletteEl = document.getElementById('palette');
 
+function currentPalette() {
+  return mode === 'pred' ? [...PALETTE_PROP, ...PALETTE_PRED] : PALETTE_PROP;
+}
 function refreshPalette() {
-  wirePalette(paletteEl, conclusionInput, mode === 'pred' ? [...PALETTE_PROP, ...PALETTE_PRED] : PALETTE_PROP);
+  wirePalette(paletteEl, conclusionInput, currentPalette());
+  document.querySelectorAll('#premise-list .symbol-palette').forEach(p => {
+    const input = p.previousElementSibling?.querySelector('input');
+    if (input) wirePalette(p, input, currentPalette());
+  });
 }
 wireModeToggle(document.getElementById('mode-toggle'), mode, (m) => { mode = m; refreshPalette(); });
 refreshPalette();
@@ -17,11 +24,17 @@ let premiseCount = 0;
 function addPremiseRow() {
   premiseCount++;
   const id = `tt-premise-${premiseCount}`;
-  const row = el('div', { style: 'display:flex;gap:0.5rem;align-items:center;margin-bottom:0.4rem' }, [
-    el('input', { type: 'text', id, placeholder: `전제 ${premiseCount} (예: ∀x(Fx→Gx))`, style: 'flex:1' }),
-    el('button', { class: 'btn danger small', type: 'button', onclick: (e) => e.currentTarget.parentElement.remove() }, '삭제'),
+  const input = el('input', { type: 'text', id, placeholder: `전제 ${premiseCount} (예: ∀x(Fx→Gx))`, style: 'flex:1' });
+  const paletteWrap = el('div', { class: 'symbol-palette', style: 'margin:0.35rem 0 0.65rem' });
+  wirePalette(paletteWrap, input, currentPalette());
+  const block = el('div', { style: 'margin-bottom:0.25rem' }, [
+    el('div', { style: 'display:flex;gap:0.5rem;align-items:center' }, [
+      input,
+      el('button', { class: 'btn danger small', type: 'button', onclick: (e) => e.currentTarget.closest('div[style*="margin-bottom"]').remove() }, '삭제'),
+    ]),
+    paletteWrap,
   ]);
-  document.getElementById('premise-list').appendChild(row);
+  document.getElementById('premise-list').appendChild(block);
 }
 document.getElementById('add-premise').addEventListener('click', addPremiseRow);
 addPremiseRow();
@@ -121,7 +134,6 @@ document.getElementById('run-sat').addEventListener('click', () => {
     if (!r.ok) { showMessage(msg, `전제 구문 오류 (${p}): ${r.error}`, 'bad'); return; }
     premises.push(r.ast);
   }
-  // combine all premises with AND for a single-formula satisfiability test
   const combined = premises.reduce((acc, f) => acc ? { type: 'And', left: acc, right: f } : f, null);
   const { satisfiable, tree } = checkSatisfiability(combined);
   if (satisfiable === true) showMessage(msg, '전제들을 동시에 만족하는 모형이 있습니다 (충족가능).', 'ok');
@@ -131,8 +143,6 @@ document.getElementById('run-sat').addEventListener('click', () => {
   renderTree(tree);
 });
 
-// Prefill from URL query (used by the exercises page):
-//   ?mode=prop|pred&premises=P1|P2&conclusion=C  (conclusion omitted -> satisfiability check)
 (() => {
   const qp = new URLSearchParams(location.search);
   const m = qp.get('mode');
@@ -147,7 +157,11 @@ document.getElementById('run-sat').addEventListener('click', () => {
     const list = premisesParam.split('|').map(s => s.trim()).filter(Boolean);
     document.getElementById('premise-list').innerHTML = '';
     premiseCount = 0;
-    for (const p of list) { addPremiseRow(); const inputs = document.querySelectorAll('#premise-list input'); inputs[inputs.length - 1].value = p; }
+    for (const p of list) {
+      addPremiseRow();
+      const inputs = document.querySelectorAll('#premise-list input');
+      inputs[inputs.length - 1].value = p;
+    }
     if (concParam) { conclusionInput.value = concParam; document.getElementById('run-validity').click(); }
     else document.getElementById('run-sat').click();
   }

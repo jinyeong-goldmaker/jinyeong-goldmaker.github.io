@@ -47,11 +47,17 @@ let premiseCount = 0;
 function addPremiseRow() {
   premiseCount++;
   const id = `premise-${premiseCount}`;
-  const row = el('div', { style: 'display:flex;gap:0.5rem;align-items:center;margin-bottom:0.4rem' }, [
-    el('input', { type: 'text', id, placeholder: `전제 ${premiseCount} (예: A→B)`, style: 'flex:1' }),
-    el('button', { class: 'btn danger small', type: 'button', onclick: (e) => e.currentTarget.parentElement.remove() }, '삭제'),
+  const input = el('input', { type: 'text', id, placeholder: `전제 ${premiseCount} (예: A→B)`, style: 'flex:1' });
+  const paletteWrap = el('div', { class: 'symbol-palette', style: 'margin:0.35rem 0 0.65rem' });
+  wirePalette(paletteWrap, input, PALETTE_PROP);
+  const block = el('div', { style: 'margin-bottom:0.25rem' }, [
+    el('div', { style: 'display:flex;gap:0.5rem;align-items:center' }, [
+      input,
+      el('button', { class: 'btn danger small', type: 'button', onclick: (e) => e.currentTarget.closest('div[style*="margin-bottom"]').remove() }, '삭제'),
+    ]),
+    paletteWrap,
   ]);
-  document.getElementById('premise-list').appendChild(row);
+  document.getElementById('premise-list').appendChild(block);
 }
 document.getElementById('add-premise').addEventListener('click', addPremiseRow);
 addPremiseRow();
@@ -88,9 +94,6 @@ document.getElementById('arg-run').addEventListener('click', () => {
   wrap.appendChild(renderTable(result.table.atoms, labels, result.table.rows, { counterRowIndex }));
 });
 
-// Prefill from URL query (used by the exercises page):
-//   ?formula=...                       -> section 1 (single formula)
-//   ?premises=A→B|A&conclusion=B       -> section 2 (argument validity), '|'-separated premises
 (() => {
   const qp = new URLSearchParams(location.search);
   const f = qp.get('formula');
@@ -101,7 +104,11 @@ document.getElementById('arg-run').addEventListener('click', () => {
     const list = premisesParam.split('|').map(s => s.trim()).filter(Boolean);
     document.getElementById('premise-list').innerHTML = '';
     premiseCount = 0;
-    for (const p of list) { addPremiseRow(); const inputs = document.querySelectorAll('#premise-list input'); inputs[inputs.length - 1].value = p; }
+    for (const p of list) {
+      addPremiseRow();
+      const inputs = document.querySelectorAll('#premise-list input');
+      inputs[inputs.length - 1].value = p;
+    }
     if (concParam) conclusionInput.value = concParam;
     document.getElementById('arg-run').click();
   }
