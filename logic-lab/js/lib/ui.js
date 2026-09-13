@@ -2,10 +2,23 @@
 
 export function wirePalette(container, targetInput, symbols) {
   container.innerHTML = '';
-  for (const { label, insert } of symbols) {
+  let predicateBreakAdded = false;
+  for (const { label, insert, title, group } of symbols) {
+    if (group === 'predicate' && !predicateBreakAdded) {
+      const br = document.createElement('span');
+      br.className = 'palette-break';
+      br.setAttribute('aria-hidden', 'true');
+      container.appendChild(br);
+      predicateBreakAdded = true;
+    }
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = label;
+    if (title) {
+      btn.title = title;
+      btn.setAttribute('aria-label', title);
+    }
+    if (group) btn.dataset.group = group;
     btn.addEventListener('click', () => {
       const start = targetInput.selectionStart ?? targetInput.value.length;
       const end = targetInput.selectionEnd ?? targetInput.value.length;
