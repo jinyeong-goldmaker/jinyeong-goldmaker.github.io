@@ -21,7 +21,7 @@ header.site-header .brand {
   position: relative;
   left: 1.5cm;
   cursor: pointer;
-  color: #111;
+  color: var(--muted);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Noto Sans KR", sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
@@ -37,13 +37,14 @@ header.site-header .brand-logo {
   max-width: none;
   max-height: none;
   flex: 0 0 auto;
-  object-fit: fill;
+  object-fit: contain;
   overflow: visible;
 }
 header.site-header .brand span {
   display: block;
-  color: #111;
+  color: var(--muted);
   font: inherit;
+  font-weight: 700;
   line-height: 1;
 }
 header.site-header nav {
