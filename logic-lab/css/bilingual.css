@@ -4,7 +4,7 @@
   gap: 1rem !important;
 }
 
-/* Header brand: intentionally isolated from all legacy brand/image sizing. */
+/* Header brand */
 header.site-header .container {
   max-width: 1180px;
   justify-content: flex-start;
@@ -27,18 +27,14 @@ header.site-header .brand {
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
-  overflow: visible;
 }
 header.site-header .brand-logo {
-  all: unset;
   display: block;
-  height: 35px;
-  width: auto;
+  width: 162px;
+  height: auto;
+  flex: 0 0 162px;
   max-width: none;
-  max-height: none;
-  flex: 0 0 auto;
   object-fit: contain;
-  overflow: visible;
 }
 header.site-header .brand span {
   display: block;
@@ -116,7 +112,10 @@ header.site-header nav {
     align-items: flex-start;
   }
   header.site-header .brand { left: 0; }
-  header.site-header .brand-logo { height: 32px; }
+  header.site-header .brand-logo {
+    width: 148px;
+    flex-basis: 148px;
+  }
   header.site-header nav {
     flex-wrap: wrap;
     white-space: normal;
